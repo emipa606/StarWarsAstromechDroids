@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="SW_AssemblyKit_Base">
+    <defName>Create_BB_Item</defName>
+    <label>BB Astromech Assembly Kit</label>
+    <description>A assembly kit containing the tools and materials, to fully create a Astromech Droid</description>
+    <graphicData>
+      <texPath>Things/Items/IndustrialAutomaton</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>1400</MarketValue>
+    </statBases>
+  </ThingDef>
+  <ThingDef ParentName="SW_CreateBuilding_Base">
+    <defName>Create_BB_Building</defName>
+    <label>BB Astromech Droid</label>
+    <description>Creates a BB Astromech Droid.</description>
+    <comps>
+      <li Class="O21Toolbox.CompProperties_PawnSpawner">
+        <pawnKind>Pawn_BB_Astromech</pawnKind>
+        <newborn>true</newborn>
+      </li>
+    </comps>
+  </ThingDef>
+  <RecipeDef>
+    <defName>Create_BB_Droid</defName>
+    <label>create BB Astromech Droid</label>
+    <description>Create a BB Astromech Droid.</description>
+    <jobString>Creating Droid.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>5000</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>45</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>35</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <Create_BB_Building>1</Create_BB_Building>
+    </products>
+    <recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+    <skillRequirements>
+      <Crafting>8</Crafting>
+    </skillRequirements>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>BB_Series</researchPrerequisite>
+  </RecipeDef>
+  <RecipeDef>
+    <defName>Assemble_BB_DroidB</defName>
+    <label>assemble BB Astromech Droid</label>
+    <description>Assemble a BB Astromech Droid.</description>
+    <jobString>Assembling Droid.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>1</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Create_BB_Item</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <Create_BB_Building>1</Create_BB_Building>
+    </products>
+    <recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+</Defs>
